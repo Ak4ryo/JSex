@@ -1,0 +1,11 @@
+function checkForSeven(arr) {
+  if (arr.some(num => num.toString().includes('7'))) {
+    return "Boom!";
+  } else {
+    return "no n 7 in the array";
+  }
+}
+
+// test array
+const numbers = [1, 2, 3, 7, 5, 6];
+console.log(checkForSeven(numbers)); // Output: "Boom!"
