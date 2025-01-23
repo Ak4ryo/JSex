@@ -1,0 +1,29 @@
+function finalPosition(movements) {
+  // Start
+  let x = 0, y = 0;
+
+  // DirectionsL North, East, South, West
+  const directions = ['North', 'East', 'South', 'West'];
+  let currentDirection = 0;
+
+  // movement
+  for (let i = 0; i < movements.length; i++) {
+    const steps = movements[i];
+
+    // Update position based on the current direction
+    if (directions[currentDirection] === 'North') {
+      y += steps;
+    } else if (directions[currentDirection] === 'East') {
+      x += steps;
+    } else if (directions[currentDirection] === 'South') {
+      y -= steps;
+    } else if (directions[currentDirection] === 'West') {
+      x -= steps;
+    }
+
+    // Rotate 90
+    currentDirection = (currentDirection + 1) % 4;
+  }
+  // final pos as x y
+  return [x, y];
+}
