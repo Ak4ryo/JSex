@@ -1,0 +1,23 @@
+// Examples
+  sentence(["orange", "apple", "pear"]) ➞ "An orange, an apple and a pear."
+  sentence(["keyboard", "mouse"]) ➞ "A keyboard and a mouse."
+  sentence(["car", "plane", "truck", "boat"]) ➞ "A car, a plane, a truck and a boat."
+
+// CODE 
+
+function sentence(nouns) {
+  if (nouns.length === 0) 
+return "";
+
+  const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1);
+
+  return nouns
+    .map((noun, index) => {
+      const article = ["a", "e", "i", "o", "u"].includes(noun[0].toLowerCase()) ? "an" : "a";
+      if (index === nouns.length - 1 && nouns.length > 1) return `and ${article} ${noun}`;
+      return `${article} ${noun}`;
+    })
+    .join(", ")
+    .replace(/, and/, " and")
+    + ".";
+}
