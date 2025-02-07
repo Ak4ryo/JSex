@@ -365,3 +365,18 @@ const arr2 = [10, [20, [30, null, null], [40, null, null]], [50, null, null]];
 
 console.log(valueInTree(arr1, 5));  // Output: true
 console.log(valueInTree(arr1, 9));  // Output: false
+
+// fibonacci string
+function Fibonacci(){
+    let number1 = 0;
+    let number2 = 1;
+    
+      let current = number1 + number2;
+      number1 = number2;
+      number2 = current;
+      console.log(current);
+}
+
+for (let i = 0; i < 10; i++) {
+  Fibonacci();
+}
